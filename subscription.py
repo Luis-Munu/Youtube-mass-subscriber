@@ -14,9 +14,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 # Change the language here, Spanish (es) or English (en)
 language = "es"
 
-logging.basicConfig(filename='subscription.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(filename='config/subscription.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-elements = json.load(open("elements.json", "r"))
+elements = json.load(open("config/elements.json", "r"))
 
 @contextmanager
 def get_driver():
@@ -27,7 +27,7 @@ def get_driver():
     options.add_argument(f'--lang={language}')
     
     #chromedriver_autoinstaller.install() 
-    driver = webdriver.Chrome(executable_path='chromedriver.exe', options=options)
+    driver = webdriver.Chrome(executable_path='config/chromedriver.exe', options=options)
     try:
         yield driver
     finally:
@@ -51,7 +51,7 @@ def subscription_loop(username, password):
         decline_cookies(driver)
         sign_in(driver, username, password)
 
-        for url in read_channel_urls("urls.txt"):
+        for url in read_channel_urls("config/urls.txt"):
             channel_subscription(driver, url)
             time.sleep(2)
 
