@@ -1,0 +1,18 @@
+{
+    "labels": {
+      "subscribe_button": {
+        "en": "Subscribe",
+        "es": "Suscribirme"
+      }
+    },
+    "locators": {
+      "reject_cookies": {
+        "en": "//*[@aria-label=\"Reject the use of cookies and other data for the purposes described\"]",
+        "es": "//*[@aria-label=\"Rechazar el uso de cookies y otros datos para las finalidades descritas\"]"
+      },
+      "sign_in": {
+        "en": "//*[@aria-label=\"Sign in\"]",
+        "es": "//*[@aria-label=\"Iniciar sesión\"]"
+      }
+    }
+  }
